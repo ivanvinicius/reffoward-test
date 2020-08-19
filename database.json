@@ -1,0 +1,30 @@
+{
+  "states": [
+    { 
+      "value": "sc",
+      "label": "SC"
+    },
+    { 
+      "value": "pr",
+      "label": "PR"
+    }
+  ],
+
+  "cities": [
+    { 
+      "value": "taio",
+      "label": "Taió",
+      "state_id": "sc"
+    },
+    { 
+      "value": "pouso",
+      "label": "Pouso Redondo",
+      "state_id": "sc"
+    },
+    { 
+      "value": "curitiba",
+      "label": "Curitiba",
+      "state_id": "pr"
+    }
+  ]
+}
