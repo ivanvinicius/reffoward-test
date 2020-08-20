@@ -1,12 +1,15 @@
 import React, { useRef, useEffect } from 'react';
-import ReactSelect, { OptionTypeBase, Props as SelectProps } from 'react-select';
+import ReactSelect, {
+  OptionTypeBase,
+  Props as SelectProps,
+} from 'react-select';
 import { useField } from '@unform/core';
 
-interface Props extends SelectProps<OptionTypeBase> {
+interface IProps extends SelectProps<OptionTypeBase> {
   name: string;
 }
 
-const Select: React.FC<Props> = ({ name, ...rest }) => {
+const Select: React.FC<IProps> = ({ name, ...rest }) => {
   const selectRef = useRef(null);
   const { fieldName, defaultValue, registerField } = useField(name);
 
