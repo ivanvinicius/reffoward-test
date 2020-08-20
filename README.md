@@ -1,10 +1,8 @@
-# refFoward and useImperativeHandle Hooks
+### Unform react-select
 
-Testing refFoward and useImperativeHandle React Hooks with react-select library
+Testing react-select with unform
 
-I'm trying to clean up Cidades selection when I change Estados selection value.
-
-## How to run this project
+#### How to run this project
 
 1. `$git clone` this repo.
 2. Make sure you have `npm` or `yarn` installed.

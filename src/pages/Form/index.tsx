@@ -16,9 +16,9 @@ interface ICitiesData extends ISelectOptions {
 }
 
 const Form: React.FC = () => {
+  const formRef = useRef<FormHandles>(null);
   const [states, setStates] = useState<ISelectOptions[]>();
   const [cities, setCities] = useState<ISelectOptions[]>();
-  const formRef = useRef<FormHandles>(null);
 
   useEffect(() => {
     api.get('/states').then((response) => {
@@ -27,6 +27,10 @@ const Form: React.FC = () => {
   }, []);
 
   const handleFindCitiesByState = useCallback(async (data: any) => {
+    const selectRef = formRef.current?.getFieldRef('city');
+
+    selectRef.select.clearValue();
+
     if (!data) {
       setCities([]);
     }
