@@ -65,8 +65,8 @@ const Form: React.FC = () => {
           <Select
             name="city"
             placeholder="Cidade"
-            noOptionsMessage={() => 'Antes selecione o UF'}
             options={cities}
+            noOptionsMessage={() => 'Antes selecione o UF'}
           />
         </AdressGroup>
       </Unform>

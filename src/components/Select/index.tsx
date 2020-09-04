@@ -5,7 +5,8 @@ import ReactSelect, {
 } from 'react-select';
 import { useField } from '@unform/core';
 
-import customStyles from './styles';
+import { Container } from './styles';
+import customStyles from './customStyles';
 
 interface IProps extends SelectProps<OptionTypeBase> {
   name: string;
@@ -35,13 +36,17 @@ const Select: React.FC<IProps> = ({ name, ...rest }) => {
   }, [fieldName, registerField, rest.isMulti]);
 
   return (
-    <ReactSelect
-      defaultValue={defaultValue}
-      ref={selectRef}
-      styles={customStyles}
-      classNamePrefix="react-select"
-      {...rest}
-    />
+    <Container>
+      <ReactSelect
+        defaultValue={defaultValue}
+        ref={selectRef}
+        styles={customStyles}
+        isSearchable={false}
+        isClearable={false}
+        classNamePrefix="react-select"
+        {...rest}
+      />
+    </Container>
   );
 };
 

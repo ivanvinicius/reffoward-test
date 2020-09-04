@@ -1,31 +1,11 @@
-const customStyles = {
-  option: (provided: any, state: any) => ({
-    ...provided,
-    color: state.isSelected ? 'white' : 'black',
-    backgroundColor: state.isSelected ? '#5506B0' : 'white',
-  }),
-  control: (provided: any) => ({
-    ...provided,
-    boxShadow: null,
+import styled from 'styled-components';
 
-    minHeight: '30px',
+export const Container = styled.div`
+  border: 1px solid;
+  border-color: #e6e6f0;
+  border-radius: 4px;
 
-    fontSize: '1.7rem',
-    fontFamily: 'Archivo Narrow',
-
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: '4px',
-    borderColor: '#E6E6F0',
-
-    '&:hover': {
-      borderColor: '#E6E6F0',
-    },
-
-    '&:focus-within': {
-      borderColor: '#7620D8',
-    },
-  }),
-};
-
-export default customStyles;
+  &:focus-within {
+    border-color: #5506b0;
+  }
+`;
