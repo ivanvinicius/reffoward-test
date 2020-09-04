@@ -3,8 +3,9 @@ import { FormHandles } from '@unform/core';
 import { Form as Unform } from '@unform/web';
 
 import api from '../../services/api';
-
 import Select from '../../components/Select';
+
+import { Container, AdressGroup } from './styles';
 
 interface ISelectOptions {
   value: string;
@@ -48,22 +49,28 @@ const Form: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <Unform style={{ width: '300px' }} ref={formRef} onSubmit={() => '1'}>
-        <label htmlFor="state">Estados</label>
-        <Select
-          id="state"
-          name="state"
-          options={states}
-          onChange={handleFindCitiesByState}
-        />
+    <Container>
+      <Unform ref={formRef} onSubmit={() => '1'}>
+        <h1>Formulário de Endereço</h1>
 
-        <br />
+        <AdressGroup>
+          <Select
+            name="state"
+            placeholder="Estado"
+            options={states}
+            onChange={handleFindCitiesByState}
+            noOptionsMessage={() => 'Sem registros.'}
+          />
 
-        <label htmlFor="city">Cidades</label>
-        <Select id="city" name="city" options={cities} />
+          <Select
+            name="city"
+            placeholder="Cidade"
+            noOptionsMessage={() => 'Antes selecione o UF'}
+            options={cities}
+          />
+        </AdressGroup>
       </Unform>
-    </>
+    </Container>
   );
 };
 

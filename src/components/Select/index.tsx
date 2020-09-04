@@ -5,6 +5,8 @@ import ReactSelect, {
 } from 'react-select';
 import { useField } from '@unform/core';
 
+import customStyles from './styles';
+
 interface IProps extends SelectProps<OptionTypeBase> {
   name: string;
 }
@@ -36,6 +38,7 @@ const Select: React.FC<IProps> = ({ name, ...rest }) => {
     <ReactSelect
       defaultValue={defaultValue}
       ref={selectRef}
+      styles={customStyles}
       classNamePrefix="react-select"
       {...rest}
     />
