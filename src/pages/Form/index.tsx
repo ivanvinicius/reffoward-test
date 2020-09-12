@@ -51,6 +51,10 @@ const Form: React.FC = () => {
   return (
     <Container>
       <Unform ref={formRef} onSubmit={() => '1'}>
+        <p>
+          Run API using the command
+          <span> yarn json:server</span>
+        </p>
         <h1>Formulário de Endereço</h1>
 
         <AdressGroup>

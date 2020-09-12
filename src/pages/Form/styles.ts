@@ -23,6 +23,11 @@ export const Container = styled.div`
     border: 1px solid lightgrey;
     border-radius: 8px;
 
+    span {
+      font-size: 20px;
+      color: #5506b0;
+    }
+
     h1 {
       color: grey;
     }
